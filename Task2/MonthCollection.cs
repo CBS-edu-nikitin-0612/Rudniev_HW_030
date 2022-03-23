@@ -76,7 +76,7 @@ namespace Task2
 
             if (arr.Length - index >= this.array.Length && arr != null)
                 for (int i = 0; i < this.array.Length; i++)
-                    arr[index] = this.array[i];
+                    arr[index++] = this.array[i];
         }
 
         public IEnumerator GetEnumerator()
