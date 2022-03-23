@@ -22,20 +22,30 @@ namespace aditionalTask
                 Console.Write(el + " ");
         }
 
+        //static IEnumerable CreateCollectionOfPowOddNumber(int[] array)
+        //{
+        //    int position = -1;
+        //    while (true)
+        //    {
+        //        if (position < array.Length - 1)
+        //        {
+        //            position++;
+        //            if ((array[position] % 2) == 1)
+        //                yield return (int)Math.Pow(array[position], 2);
+        //        }
+        //        else
+        //            yield break;
+        //    }
+        //}
+
         static IEnumerable CreateCollectionOfPowOddNumber(int[] array)
         {
-            int position = -1;
-            while (true)
+            for(int i = 0; i < array.Length; i++)
             {
-                if (position < array.Length - 1)
-                {
-                    position++;
-                    if ((array[position] % 2) == 1)
-                        yield return (int)Math.Pow(array[position], 2);
-                }
-                else
-                    yield break;
+                if ((array[i] % 2) == 1)
+                    yield return (int)Math.Pow(array[i], 2);
             }
+            yield break;
         }
     }
 }
