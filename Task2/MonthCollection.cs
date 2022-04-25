@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Task2
 {
@@ -32,7 +31,7 @@ namespace Task2
         public MonthCollection()
         {
             this.syncRoot = new object();
-            array = new Month[12]
+            this.array = new Month[12]
             {
                 new Month("January", 31),
                 new Month("February", 28),
@@ -56,7 +55,8 @@ namespace Task2
 
         public void Clear()
         {
-            array = new Month[12];
+            throw new NotImplementedException();
+            //array = new Month[12];
         }
 
         public bool Contains(object value)
@@ -92,7 +92,8 @@ namespace Task2
                     if (array[i].Equals((Month)value))
                         return i;
             }
-            throw new ArgumentException("not found");
+            //throw new ArgumentException("not found");
+            return -1;
         }
 
         public void Insert(int index, object value)
@@ -102,20 +103,22 @@ namespace Task2
 
         public void Remove(object value)
         {
-            try
-            {
-                int index = this.IndexOf(value);
-                array[index] = new Month();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //try
+            //{
+            //    int index = this.IndexOf(value);
+            //    array[index] = new Month();
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            throw new NotImplementedException();
         }
 
         public void RemoveAt(int index)
         {
-            array[index] = new Month();
+            //array[index] = new Month();
+            throw new NotImplementedException();
         }
 
         public IEnumerable CreateCollectionMonthsWithSameAmountOfDays(int amountDays)
