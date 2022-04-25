@@ -13,12 +13,12 @@ namespace aditionalTask
                 array[i] = random.Next(0, 9);
 
             Console.WriteLine("Random array of int numbers: ");
-            foreach (int el in array)
+            foreach (var el in array)
                 Console.Write(el + " ");
 
             IEnumerable newArray = CreateCollectionOfPowOddNumber(array);
             Console.WriteLine("\nArray of pow odd numbers: ");
-            foreach (int el in newArray)
+            foreach (var el in newArray)
                 Console.Write(el + " ");
         }
 
@@ -38,14 +38,22 @@ namespace aditionalTask
         //    }
         //}
 
+        //static IEnumerable CreateCollectionOfPowOddNumber(int[] array)
+        //{
+        //    for(int i = 0; i < array.Length; i++)
+        //    {
+        //        if ((array[i] % 2) == 1)
+        //            yield return (int)Math.Pow(array[i], 2);
+        //    }
+        //    yield break;
+        //}
+
         static IEnumerable CreateCollectionOfPowOddNumber(int[] array)
         {
-            for(int i = 0; i < array.Length; i++)
-            {
-                if ((array[i] % 2) == 1)
-                    yield return (int)Math.Pow(array[i], 2);
-            }
-            yield break;
+            foreach (var item in array)
+                if (item % 2 == 1)
+                    yield return Math.Pow(item, 2);
+            //yield break;
         }
     }
 }
